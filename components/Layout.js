@@ -1,5 +1,12 @@
-import { AppBar, Container, Toolbar, Typography } from '@material-ui/core';
+import {
+  AppBar,
+  Container,
+  Link,
+  Toolbar,
+  Typography
+} from '@material-ui/core';
 import Head from 'next/head';
+import NextLink from 'next/link';
 import React from 'react';
 import useStyles from '../utils/styles';
 
@@ -8,11 +15,22 @@ export default function Layout({ children }) {
   return (
     <div>
       <Head>
-        <title>Ecommerce</title>
+        <title>Ezintle.com || Home </title>
       </Head>
       <AppBar position="static" className={classes.navbar}>
         <Toolbar>
-          <Typography>Ecommerce</Typography>
+          <NextLink href="/" passHref>
+            <Link>
+            <Typography className={classes.brand}>Ezintle.com</Typography>
+            </Link>
+          </NextLink>
+          <div className={classes.grow}></div>
+          <NextLink href="/cart" passHref>
+            <Link>Cart</Link>
+          </NextLink>
+          <NextLink href="/login" passHref>
+            <Link>login</Link>
+          </NextLink>
         </Toolbar>
       </AppBar>
       <Container className={classes.main}>{children}</Container>
