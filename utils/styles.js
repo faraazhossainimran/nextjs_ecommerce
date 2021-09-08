@@ -25,5 +25,9 @@ const useStyles = makeStyles({
     color: '#ffffff',
     marginTop: 20,
   },
+  section: {
+    marginTop: 10,
+    marginBottom: 10,
+  },
 });
 export default useStyles;
