@@ -1,11 +1,11 @@
 import {
-    Button,
-    Card,
-    Grid,
-    Link,
-    List,
-    ListItem,
-    Typography
+  Button,
+  Card,
+  Grid,
+  Link,
+  List,
+  ListItem,
+  Typography
 } from '@material-ui/core';
 import { useRouter } from 'next/dist/client/router';
 import Image from 'next/image';
@@ -18,7 +18,7 @@ export default function ProductScreen() {
   const classes = useStyle();
   const router = useRouter();
   const { slug } = router.query;
-  const product = data.products.find((a) => a.slug);
+  const product = data.products.find((a) => a.slug === slug);
   if (!product) {
     return <div>Sorry, Nothing Found</div>;
   }
@@ -27,12 +27,12 @@ export default function ProductScreen() {
       <div className={classes.section}>
         <NextLink href="/" passHref>
           <Link>
-            <Typography>Back to Products Page</Typography>
+            <Typography>Back to Home Page</Typography>
           </Link>
         </NextLink>
       </div>
       <Grid container spacing={1}>
-        <Grid items md={6} xs={12}>
+        <Grid items md={5} xs={12}>
           <Image
             src={product.image}
             alt={product.name}
@@ -41,10 +41,10 @@ export default function ProductScreen() {
             layout="responsive"
           ></Image>
         </Grid>
-        <Grid items md={3} xs={12}>
+        <Grid items md={4} xs={12}>
           <List>
           <ListItem>
-              <Typography component="h1">{product.name} </Typography>
+              <Typography component="h1" variant="h1">{product.name} </Typography>
             </ListItem>
             <ListItem>
               <Typography> Category: {product.category} </Typography>
@@ -58,8 +58,17 @@ export default function ProductScreen() {
               </Typography>
             </ListItem>
             <ListItem>
-              <Typography>Description: {product.description}</Typography>
+            <Typography>Warranty: {product.warranty>0? '3 Months' : 'Not Available'}</Typography>
             </ListItem>
+            <ListItem>
+            <Typography variant='h6' component='h6'>Ask any Question About this product: </Typography>
+            </ListItem>
+            <ListItem>
+            <Typography >{product.phoneNumber}</Typography>
+            </ListItem>
+            {/* <ListItem>
+              <Typography>Description: {product.description}</Typography>
+            </ListItem> */}
           </List>
         </Grid>
         <Grid items md={3} xs={12}>
@@ -92,6 +101,21 @@ export default function ProductScreen() {
           </Card>
         </Grid>
       </Grid>
+      <Grid className={classes.description} items md={12} xs={12}>
+          <Card>
+            <List>
+                <ListItem>
+                <Grid container >
+                <Grid items>
+                <Typography component='h2' variant="h2">Product Description of {product.name}</Typography>
+                {/* <Typography component='h2' variant="h2">{product.name}</Typography> */}
+                <Typography>{product.description}</Typography>
+                </Grid>
+                </Grid>
+                </ListItem>
+            </List>
+          </Card>
+        </Grid>
     </Layout>
   );
 }
