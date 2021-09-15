@@ -1,16 +1,18 @@
 const data = {
   products: [
     {
-      name: 'Free Shirt',
-      slug: 'free-shirt',
+      name: 'UiiSii HM13 Wired In-Ear Heavy Bass Headphone with Mic ',
+      slug: 'uiisii-hm13',
       category: 'Shirts',
-      image: '/images/shirt1.jpg',
+      image: '/images/uiisii-hm13.jpg',
       price: 70,
-      brand: 'Nike',
+      brand: 'UiiSii',
       rating: 4.5,
       numReviews: 10,
       countInStock: 20,
-      description: 'A popular shirt',
+      warranty: 3,
+      phoneNumber: +8801986348295,
+      description: 'Superior Sound Performance Compatible with all 3.5mm audio cable jackIn-ear earbud with ergonomic design make you feel comfortable.Flexible, light weight, snug and secure, and they can be easily threaded through a jacket, bag, or backpack.This earbuds with microphone is convenient for hands-free calling.1-button in-line remote gives you the power to easily answer and end phone calls, control songs play/pause, skip or rewind, call out Siri. Brand UiiSii Model number HM13 Headphone material Metal Plug diameter 3 5mm Headphone output source On-the-go.Package types Official standard Cable length 120cm Wearing style Earplugs.Type of headset Wired.Whether wire control Yes.Compatible platforms ANDROID other Windows Phone iOS',
     },
     {
       name: 'Fit Shirt',
@@ -22,6 +24,7 @@ const data = {
       rating: 4.2,
       numReviews: 10,
       countInStock: 20,
+      phoneNumber: +8801521216217,
       description: 'A popular shirt',
     },
     {
