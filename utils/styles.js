@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   },
   footer: {
     textAlign: 'center',
-    padding: 50,
+    padding: 30,
     backgroundColor: '#304050',
     color: '#ffffff',
     marginTop: 20,
@@ -28,6 +28,10 @@ const useStyles = makeStyles({
   section: {
     marginTop: 10,
     marginBottom: 10,
+  },
+  description: {
+    paddingTop: 40,
+    paddingBottom: 40,
   },
 });
 export default useStyles;
