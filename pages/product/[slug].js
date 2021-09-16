@@ -20,7 +20,7 @@ export default function ProductScreen() {
   const { slug } = router.query;
   const product = data.products.find((a) => a.slug === slug);
   if (!product) {
-    return <div>Sorry, Nothing Found</div>;
+    return <div><Typography variant='h5' component='h5'>Sorry, Nothing Found</Typography></div>;
   }
   return (
     <Layout title={product.name} description={product.description}>
@@ -61,7 +61,7 @@ export default function ProductScreen() {
             <Typography>Warranty: {product.warranty>0? '3 Months' : 'Not Available'}</Typography>
             </ListItem>
             <ListItem>
-            <Typography variant='h6' component='h6'>Ask any Question About this product: </Typography>
+            <Typography variant='h6' component='h6'>Ask Question: </Typography>
             </ListItem>
             <ListItem>
             <Typography >{product.phoneNumber}</Typography>
@@ -96,6 +96,7 @@ export default function ProductScreen() {
                 </ListItem>
                 <ListItem>
                     <Button fullWidth variant="contained" color="primary">Add to Cart</Button>
+                    <Button fullWidth variant="contained" color="secondary">WishList</Button>
                 </ListItem>
             </List>
           </Card>
@@ -107,7 +108,7 @@ export default function ProductScreen() {
                 <ListItem>
                 <Grid container >
                 <Grid items>
-                <Typography component='h2' variant="h2">Product Description of {product.name}</Typography>
+                <Typography component='h2' variant="h2">Detailed Description of {product.name}</Typography>
                 {/* <Typography component='h2' variant="h2">{product.name}</Typography> */}
                 <Typography>{product.description}</Typography>
                 </Grid>
