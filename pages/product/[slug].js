@@ -1,8 +1,6 @@
 import {
   Button,
-  Card,
-  Grid,
-  Link,
+  Card, Grid, LinearProgress, Link,
   List,
   ListItem,
   Typography
@@ -20,7 +18,12 @@ export default function ProductScreen() {
   const { slug } = router.query;
   const product = data.products.find((a) => a.slug === slug);
   if (!product) {
-    return <div><Typography variant='h5' component='h5'>Sorry, Nothing Found</Typography></div>;
+    return <div>
+      <Grid container>
+        <LinearProgress />
+        </Grid>
+        <Typography>loading...</Typography>
+      </div>;
   }
   return (
     <Layout title={product.name} description={product.description}>
