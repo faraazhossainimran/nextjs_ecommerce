@@ -76,5 +76,17 @@ const data = {
       description: 'A popular pants',
     },
   ],
+  categories: [
+    {
+      categoryName: 'Earphone',
+      slug: 'earphone',
+      categoryimage: '/images/pants3.jpg',
+    },
+    {
+      categoryName: 'Speaker',
+      slug: 'earphone1',
+      categoryimage: '/images/pants3.jpg',
+    },
+  ],
 };
 export default data;

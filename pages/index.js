@@ -5,16 +5,38 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  Grid,
-  Typography
+  Grid, Skeleton, Typography
 } from '@material-ui/core';
 import NextLink from 'next/link';
+import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import data from '../utils/data';
 export default function Home() {
+  const [loading, setLoading] =useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
   return (
     <Layout>
-      <div>
+      <div> 
+        <div>
+        {loading ? <Skeleton width={400} height={200} /> : <div>done</div> }
+        </div>
+          <h1>Category</h1>
+          <Grid container spacing={3}>
+          {data.categories.map((category) => (
+            <Grid item md={3} key={category.name}>
+              <Card>
+                <NextLink href={`/category/${category.slug}`}>
+                  <Typography component={'h5'} variant={'h5'}>{category.categoryName}</Typography>
+                </NextLink>
+              </Card>
+            </Grid>
+           ))}
+          </Grid>
+       
         <h1>Featured Products</h1>
         <Grid container spacing={3}>
           {data.products.map((product) => (
@@ -69,6 +91,7 @@ export default function Home() {
             </Grid>
           ))}
         </Grid>
+     
       </div>
     </Layout>
   );

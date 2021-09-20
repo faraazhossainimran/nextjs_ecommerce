@@ -5,7 +5,6 @@ import {
   Link, Switch, ThemeProvider, Toolbar,
   Typography
 } from '@material-ui/core';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Cookies from 'js-cookie';
 import Head from 'next/head';
 import NextLink from 'next/link';
@@ -65,7 +64,6 @@ export default function Layout({ title, description, children }) {
           <Switch checked={darkMode} onChange={darkModeChangeHandler}></Switch>
           <NextLink href="/cart" passHref>
             <Link>
-            <ShoppingCartIcon style={{ fontSize: 20 }} />
             Cart
             </Link>
           </NextLink>

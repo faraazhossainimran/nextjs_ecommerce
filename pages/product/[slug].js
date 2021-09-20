@@ -50,24 +50,24 @@ export default function ProductScreen() {
               <Typography component="h1" variant="h1">{product.name} </Typography>
             </ListItem>
             <ListItem>
-              <Typography> Category: {product.category} </Typography>
+              <Typography><strong>Category:</strong> {product.category} </Typography>
             </ListItem>
             <ListItem>
-              <Typography> Brand: {product.brand} </Typography>
+              <Typography> <strong>Brand:</strong>  {product.brand} </Typography>
             </ListItem>
             <ListItem>
               <Typography>
-                Ratings: {product.rating} Stars ({product.numReviews} Reviews)
+              <strong>Ratings:</strong>  {product.rating} Stars ({product.numReviews} Reviews)
               </Typography>
             </ListItem>
             <ListItem>
-            <Typography>Warranty: {product.warranty>0? '3 Months' : 'Not Available'}</Typography>
+            <Typography> <strong>Warranty:</strong> {product.warranty>0? '3 Months' : 'Not Available'}</Typography>
             </ListItem>
             <ListItem>
-            <Typography variant='h6' component='h6'>Ask Question: </Typography>
+            <Typography variant='h6' component='h6'> Ask Question: </Typography>
             </ListItem>
             <ListItem>
-            <Typography >{product.phoneNumber}</Typography>
+            <Typography ><strong>{product.phoneNumber}</strong></Typography>
             </ListItem>
             {/* <ListItem>
               <Typography>Description: {product.description}</Typography>
